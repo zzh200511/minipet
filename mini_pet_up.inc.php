@@ -31,7 +31,7 @@ if ($_FILES['file']['error']==0 && $_GET['formhash'] == FORMHASH) {
              echo json_encode(array("error" => lang('plugin/mini_pet', 'tupiangeshibuzhengque')));
 			 exit ;
          }
-     $pics =$_FILES['file']["name"];
+     $pics =$_FILES['file']['tmp_name'];
 	 $img_dir = "source/plugin/mini_pet/upimg/".date("Ymd")."/";
      if(!file_exists($img_dir)){
       mkdir($img_dir,0777,true);
